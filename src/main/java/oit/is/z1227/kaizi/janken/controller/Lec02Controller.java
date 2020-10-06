@@ -25,13 +25,13 @@ public class Lec02Controller {
    * javaで処理できるようになる ModelMapはthymeleafに渡すためのMapと呼ばれるデータ構造を持つ変数
    * Mapはkeyとvalueの組み合わせで値を保持する
    *
-   * @param param1
+   * @param name
    * @param model
    * @return
    */
-  @GetMapping("/sample22")
-  public String sample22(@PathVariable String param1, ModelMap model) {
-    String tasu = (param1);// param1が文字列なので，parseIntでint型の数値に変換する
+  @PostMapping("/toroku")
+  public String toroku(@RequestParam String name, ModelMap model) {
+    String tasu = name;// param1が文字列なので，parseIntでint型の数値に変換する
     String tasuResult = tasu;
     // ModelMap型変数のmodelにtasuResult1という名前の変数で，tasuResultの値を登録する．
     // ここで値を登録するとthymeleafが受け取り，htmlで処理することができるようになる
