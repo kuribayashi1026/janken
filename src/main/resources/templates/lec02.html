@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>jankengame</title>
+</head>
+
+<body>
+  <h1>Lec02 GET!</h1>
+  <div th:if="${tasuResult1}">
+    Hi[[${tasuResult1}]]
+  </div>
+  <a href="/gu?gu=グー">グー</a>
+  <a href="/chi?gu=チョキ">チョキ</a>
+  <a href="/pa?gu=パー">パー</a>
+  <div th:if="${tasuResult2}">
+    自分:[[${tasuResult3}]]
+    あいて：チョキ
+    結果：[[${tasuResult2}]]
+  </div>
+</body>
+
+</html>
