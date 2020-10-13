@@ -7,7 +7,14 @@
 </head>
 
 <body>
+  <div><a href="/logout">ログアウト</a></div>
   <h1>Lec02 GET!</h1>
+  <h2>エントリー</h2>
+  <div th:if="${room}">
+    <ul>
+      <li th:each="user : ${room.users}">[[${user}]]</li>
+    </ul>
+  </div>
   <div th:if="${name}">
     Hi! [[${name}]]
   </div>
