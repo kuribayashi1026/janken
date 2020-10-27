@@ -18,6 +18,7 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
     // 開発中は↓の書き方でも良いが，平文でパスワードが保存される
     auth.inMemoryAuthentication().withUser("user1").password(passwordEncoder().encode("thu")).roles("USER");
     auth.inMemoryAuthentication().withUser("user2").password(passwordEncoder().encode("shu")).roles("USER");
+    auth.inMemoryAuthentication().withUser("くりばやし").password(passwordEncoder().encode("a")).roles("USER");
   }
 
   @Bean
