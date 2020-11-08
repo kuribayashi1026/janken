@@ -1,21 +1,21 @@
 package oit.is.z1227.kaizi.janken.model;
 
 public class Janken {
-  String userhand;
+  public String result;
+  public String userhand;
 
-  public static String Uhand(String userhand) {
-    return userhand;
-  }
+  public Janken(int hand) {
 
-  public static String Result(String userhand) {
-    String result;
-    if (userhand.equals("chi")) {
+    if (hand == 2) {
+      userhand = "チョキ";
       result = "draw";
-    } else if (userhand.equals("gu")) {
-      result = "win";
-    } else {
+    } else if (hand == 3) {
       result = "lose";
+      userhand = "パー";
+    } else {
+      result = "win";
+      userhand = "グー";
     }
-    return result;
   }
+
 }

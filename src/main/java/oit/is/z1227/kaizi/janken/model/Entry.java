@@ -9,18 +9,14 @@ public class Entry {
   int roomNo = 1;
 
   public void addUser(String name) {
-    // 同名のユーザが居たら何もせずにreturn
     for (String s : this.users) {
       if (s.equals(name)) {
         return;
       }
     }
-    // 同名のユーザが居なかった場合はusersにnameを追加する
     this.users.add(name);
   }
 
-  // 以降はフィールドのgetter/setter
-  // これらがないとThymeleafで値を取得できない
   public int getRoomNo() {
     return roomNo;
   }
