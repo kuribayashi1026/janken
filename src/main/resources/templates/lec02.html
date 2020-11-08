@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
 
 <head>
   <meta charset="utf-8">
-  <title>jankengame</title>
 </head>
 
 <body>
   <div><a href="/logout">ログアウト</a></div>
-  <h1>Lec02 GET!</h1>
-  <h2>エントリー</h2>
-  <div th:if="${room}">
+  <p>Hi! [[${user}]]</p>
+  <h1>エントリー</h1>
+  <div>
     <ul>
-      <li th:each="user : ${room.users}">[[${user}]]</li>
+      <li th:each="user1,stat:${user2}"><a th:href="@{/match(id=${user1.id})}">[[${user1.name}]]</a></li>
     </ul>
   </div>
-  <div th:if="${name}">
-    Hi! [[${name}]]
+
+  <h2>試合結果</h2>
+  <div th:each="match1,stat:${match2}">
+    <tr>
+      <td>id:[[${match1.id}]]</td>
+      <td>user_1:[[${match1.user_1}]]</td>
+      <td>user2:[[${match1.user_2}]]</td>
+      <td>user1の手:[[${match1.user_1_hand}]]</td>
+      <td>user2の手:[[${match1.user_2_hand}]]</td>
+    </tr>
   </div>
-  <a href="/lec02/gu">グー</a>
-  <a href="/lec02/chi">チョキ</a>
-  <a href="/lec02/pa">パー</a>
-  <div th:if="${tasuResult2}">
-    自分:[[${tasuResult3}]]
-    あいて：チョキ
-    結果：[[${tasuResult2}]]
-  </div>
+
 </body>
 
 </html>
