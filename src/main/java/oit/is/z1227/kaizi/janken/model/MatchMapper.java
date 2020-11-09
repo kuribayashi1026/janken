@@ -12,8 +12,8 @@ public interface MatchMapper {
   @Select("SELECT * from matches")
   ArrayList<Match> selectAllMatches();
 
-  @Select("SELECT ID, USER_1, USER_2, USER_1_HAND, USER_2_HAND, IS_ACTIVE FROM MATCHES WHERE USER_1=#{user_1} and USER_2=#{user_2};")
-  ArrayList<Match> selectMatches(int user_1, int user_2);
+  @Select("SELECT COUNT(IS_ACTIVE) FROM MATCHES WHERE IS_ACTIVE = 'TRUE'")
+  int getactive();
 
   @Insert("INSERT INTO matches (user_1,user_2,user_1_hand,user_2_hand) VALUES (#{user_1},#{user_2},#{user_1_hand},#{user_2_hand});")
   @Options(useGeneratedKeys = true, keyColumn = "id", keyProperty = "id")

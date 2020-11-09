@@ -4,9 +4,9 @@ public class Match {
   int id;
   int user_1;
   int user_2;
+  boolean is_active;
   String user_1_hand;
   String user_2_hand;
-  boolean is_active;
 
   public int getId() {
     return id;

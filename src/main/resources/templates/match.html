@@ -18,28 +18,11 @@
       <a th:href="@{/result(id=${user2.id},hand=2)}">チョキ</a>
       <a th:href="@{/result(id=${user2.id},hand=3)}">パー</a>
     </p>
-
   </div>
-
-  <div th:if="${user3}">
-    <h2>
-      [[${user}]] V.S. [[${user3.name}]]
-    </h2>
-    <p>
-      <a th:href="@{/result(id=${user3.id},hand=1)}">グー</a>
-      <a th:href="@{/result(id=${user3.id},hand=2)}">チョキ</a>
-      <a th:href="@{/result(id=${user3.id},hand=3)}">パー</a>
-    </p>
   </div>
-
-
-  <div th:if="${userhand}">
-    あなたの手 [[${userhand}]]</br>
-    あいての手 チョキ</br>
-    結果 [[${result}]]</br>
-  </div>
-
   <a href="/lec02">もどる</a>
 </body>
+
+
 
 </html>
