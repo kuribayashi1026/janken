@@ -8,18 +8,17 @@
 
 <body>
   <h1>相手の手を待っています</h1>
-  Hi <div sec:authentication="name" style="display: inline;"></div>
+  <p>Hi! [[${user}]]</p>
+  <div id=p1></div>
 </body>
 
 <script>
   window.onload = function () {
-    var sse = new EventSource('./check?id=' + [[${ opponent.id }]]);
+    var sse = new EventSource('/check');
     sse.onmessage = function (event) {
-      var data = JSON.parse(event.data);//JSONオブジェクトとしてparse
-      if (data["is_active"] === true) {
-        document.body.insertAdjacentHTML('beforeend','<a href="/lec02">結果を見る</a>');
-        sse.close();
-      }
+      var p1 = document.getElementById("p1");
+      var kekka = "<a href='/lec02'>結果を見る</a>";
+      p1.innerHTML = kekka;
     }
   }
 </script>
